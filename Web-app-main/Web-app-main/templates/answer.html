@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Сайт</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/answer.css') }}">
+</head>
+
+<body>
+    <div class="table-title">
+        <h3>Data Table</h3>
+    </div>
+    <table class="table-fill">
+        <thead>
+            <tr>
+                <th class="text-center">ID</th>
+                <th class="text-center">Age</th>
+                <th class="text-center">Sex</th>
+                <th class="text-center">Race</th>
+                <th class="text-center">Name</th>
+                <th class="text-center">Weight</th>
+                <th class="text-center">Image</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            {% for user in obj %}
+            <tr>
+                <td class="text-center">{{user[0]}}</td>
+                <td class="text-center">{{user[1]}}</td>
+                <td class="text-center">{{user[2]}}</td>
+                <td class="text-center">{{user[3]}}</td>
+                <td class="text-center">{{user[4]}}</td>
+                <td class="text-center">{{user[5]}}</td>
+                <td class="text-center">
+                    <img width="150px" height="150px" src="{{url_for('static', filename='uploads/' + user[6])}}" alt="{{user[6]}}">
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
