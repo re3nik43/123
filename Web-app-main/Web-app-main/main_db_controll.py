@@ -57,19 +57,19 @@ class DB_Controller:
     def init_table(self):
         self.open()
         self.cursor.execute('''CREATE TABLE IF NOT EXISTS patient (id INTEGER PRIMARY KEY, 
-                            age STRING(3), sex STRING(10), race STRING(8), weight STRING(3), name STRING(30), img TEXT)''')
+                            name STRING(30), weight STRING(3), age STRING(3), sex STRING(7), City STRING(20), sport STRING(4), sport2 STRING(4) )''')
         self.close()
     
     def add_data(self, info):
         self.open()
-        self.cursor.execute('''INSERT INTO patient (age, sex, race, weight, name, img) 
+        self.cursor.execute('''INSERT INTO patient (name, weight, age, sex, City ,sport, sport2) 
                             VALUES (?, ?, ?, ?, ?, ?)''', info)
         self.conn.commit()
         self.close()
 
     def get_data(self):
         self.open()
-        self.cursor.execute('''SELECT id, age, sex, race, name, weight, img FROM patient''')
+        self.cursor.execute('''SELECT id, name, weight, age, sex, City, sport,sport2 FROM patient''')
         data = self.cursor.fetchall()
         return data
         

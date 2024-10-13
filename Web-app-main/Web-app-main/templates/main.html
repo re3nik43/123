@@ -7,69 +7,93 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>Анкета для военкомата</h1>
-            <p>(Если годный то идёшь в воекомат в своем городе)</p>
-        </div>
-    </header>
+    <div class="header">
+        <h1>Добро пожаловать в нашу анкету</h1>
+        <p>Пожалуйста, заполните все разделы ниже</p>
+    </div>
+    
+    <div class="container">
+        <form action="#" method="POST">
 
-    <main>
-        <div class="container">
-            <section class="contact-info">
-                <p>Contact:военком в твоем городе</p>
-                <p>твою любимый военоначальник</p>
-                <p>Email: <a href="romavasyliev376@gmail.com">romavasyliev376@gmail.com</a></p>
-            </section>
+            <!-- Личные данные -->
+            <fieldset>
+                <legend>Личные данные</legend>
 
-            <section class="form-section">
-                <h2>заполняй анкету</h2>
-                <form id="patient-form" action="/answer" method="post" enctype="multipart/form-data"
-                    
-                    <label for="name">Name(PHIO):</label>
-                    <input type="text" id="weight" name="name" required>
-                    
-                    <label for="weight">Weight(kg):</label>
-                    <input type="number" id="weight" name="weight" required>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
 
-                    <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" required>
+                <label for="surname">Фамилия:</label>
+                <input type="text" id="surname" name="surname" placeholder="Введите вашу фамилию" required>
 
-                    <label for="sex">Sex:</label>
-                    <select id="sex" name="sex" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
 
-                    <label for="city">City</label>
-                    <select id="City" name="City" required>
-                        <option value="Kyiv">Киев</option>
-                        <option value="Dnepr">Днепр</option>
-                        <option value="Lyck">Луцьк</option>
-                        <option value="Lvov">Львов</option>
-                        <option value="Kharkov">Харьков</option>
-                    </select>
+                <label for="phone">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите ваш номер телефона" required>
+            </fieldset>
 
-                    <label for="sport">сколько отжиманий вы делаете?</label>
-                    <input type="number" id="sport" name="sport" required>
+            <!-- Контактная информация -->
+            <fieldset>
+                <legend>Контактная информация</legend>
 
-                    <label for="sport2">сколько раз вы можете отжаться на брусях</label>
-                    <input type="number" id="sport2" name="sport2" required>
+                <label for="address">Адрес:</label>
+                <input type="text" id="address" name="address" placeholder="Введите ваш адрес" required>
 
-                    <button type="submit">Submit</button>
-                    <button type="reset">Reset</button>
-                </form>
-            </section>
-        </div>
-    </main>
+                <label for="age">Возраст:</label>
+                <input type="number" id="age" name="age" placeholder="Введите ваш возраст" required>
 
-    <footer>
-        <div class="container">
-            <p>Contact Us: <a href="mailto:info@alsclinic.com">info@alsclinic.com</a> | Phone: (123) 456-7890</p>
-            <p>Disclaimer: This tool is for informational purposes only and should not replace professional medical
-                advice.</p>
-        </div>
-    </footer>
+                <label for="gender">Пол:</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Выберите ваш пол</option>
+                    <option value="male">Мужской</option>
+                    <option value="female">Женский</option>
+                    <option value="other">Другой</option>
+                </select>
+            </fieldset>
+
+            <!-- Дополнительные сведения -->
+            <fieldset>
+                <legend>Дополнительные сведения</legend>
+
+                <label for="health">Состояние здоровья:</label>
+                <textarea id="health" name="health" rows="2" placeholder="Опишите ваше состояние здоровья"></textarea>
+
+                <label for="skills">Навыки:</label>
+                <textarea id="skills" name="skills" rows="3" placeholder="Опишите ваши навыки"></textarea>
+
+                <label for="education">Уровень образования:</label>
+                <select id="education" name="education" required>
+                    <option value="" disabled selected>Выберите ваш уровень образования</option>
+                    <option value="highschool">Среднее образование</option>
+                    <option value="bachelor">Бакалавр</option>
+                    <option value="master">Магистр</option>
+                    <option value="phd">Кандидат наук</option>
+                </select>
+            </fieldset>
+
+            <!-- Хобби и интересы -->
+            <fieldset>
+                <legend>Хобби и интересы</legend>
+
+                <label for="hobbies">Хобби и интересы:</label>
+                <textarea id="hobbies" name="hobbies" rows="3" placeholder="Укажите ваши хобби и интересы"></textarea>
+
+                <label for="about">О себе:</label>
+                <textarea id="about" name="about" rows="4" placeholder="Напишите немного о себе"></textarea>
+            </fieldset>
+
+            <!-- Согласие -->
+            <fieldset>
+                <legend>Согласие</legend>
+                <label for="agreement">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    Согласен(на) с условиями обработки данных
+                </label>
+            </fieldset>
+
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
 </body>
 
 </html>
